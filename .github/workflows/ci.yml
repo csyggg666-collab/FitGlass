@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # Pure-Foundation parsing logic — no Xcode/simulator needed, fast.
+  parsing-tests:
+    name: PlanParsingKit unit tests
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: swift test
+        working-directory: PlanParsingKit
+        run: swift test
+
+  # Generate the Xcode project from project.yml and compile the app.
+  build:
+    name: Build app
+    runs-on: macos-latest   # bump to macos-26 once the image ships, if needed
+    steps:
+      - uses: actions/checkout@v4
+
+      # iOS 26.5 SDK needs Xcode 26.x. `latest-stable` picks the newest installed;
+      # pin to '26.5' explicitly once the runner image provides it.
+      - name: Select Xcode
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate project
+        run: xcodegen generate
+
+      - name: Build
+        run: |
+          xcodebuild build \
+            -project FitGlass.xcodeproj \
+            -scheme FitGlass \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO

@@ -1,0 +1,75 @@
+name: FitGlass
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "26.5"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"            # language mode 5 keeps the scaffold building without strict-concurrency churn; bump to 6.0 later
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""           # <-- set your Apple Developer Team ID here on the Mac
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SWIFT_EMIT_LOC_STRINGS: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+
+packages:
+  PlanParsingKit:
+    path: PlanParsingKit
+  ZIPFoundation:
+    url: https://github.com/weichsel/ZIPFoundation.git
+    from: "0.9.19"
+
+targets:
+  FitGlass:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.5"
+    sources:
+      - path: Sources/FitGlass
+        excludes:
+          - "Resources/Info.plist"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.fitglass
+        INFOPLIST_FILE: Sources/FitGlass/Resources/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    dependencies:
+      - package: PlanParsingKit
+        product: PlanParsingKit
+      - package: ZIPFoundation
+        product: ZIPFoundation
+
+  FitGlassTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.5"
+    sources:
+      - Tests/FitGlassTests
+    dependencies:
+      - target: FitGlass
+      - package: PlanParsingKit
+        product: PlanParsingKit
+
+schemes:
+  FitGlass:
+    build:
+      targets:
+        FitGlass: all
+        FitGlassTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - FitGlassTests
+    profile:
+      config: Release
+    archive:
+      config: Release

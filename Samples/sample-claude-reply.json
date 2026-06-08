@@ -1,0 +1,44 @@
+{
+  "title": "Beginner Full-Body Strength",
+  "summary": "A 3-day full-body plan focused on the main compound lifts with simple linear progression.",
+  "goal": "strength",
+  "level": "beginner",
+  "weeks": 8,
+  "daysPerWeek": 3,
+  "language": "en",
+  "workouts": [
+    {
+      "day": 1,
+      "title": "Day A — Squat",
+      "focus": "Lower body, push",
+      "estimatedMinutes": 50,
+      "exercises": [
+        { "name": "Back Squat", "sets": 5, "reps": "5", "restSeconds": 180, "weight": "barbell", "notes": "Add 2.5kg when all reps are clean." },
+        { "name": "Bench Press", "sets": 5, "reps": "5", "restSeconds": 180, "weight": "barbell", "notes": "" },
+        { "name": "Barbell Row", "sets": 5, "reps": "5", "restSeconds": 120, "weight": "barbell", "notes": "" }
+      ]
+    },
+    {
+      "day": 2,
+      "title": "Day B — Deadlift",
+      "focus": "Posterior chain, press",
+      "estimatedMinutes": 55,
+      "exercises": [
+        { "name": "Deadlift", "sets": 1, "reps": "5", "restSeconds": 210, "weight": "barbell", "notes": "One heavy top set." },
+        { "name": "Overhead Press", "sets": 5, "reps": "5", "restSeconds": 150, "weight": "barbell", "notes": "" },
+        { "name": "Pull-up", "sets": 4, "reps": "AMRAP", "restSeconds": 120, "weight": "bodyweight", "notes": "" }
+      ]
+    },
+    {
+      "day": 3,
+      "title": "Day C — Volume",
+      "focus": "Hypertrophy accessories",
+      "estimatedMinutes": 50,
+      "exercises": [
+        { "name": "Front Squat", "sets": 4, "reps": "8", "restSeconds": 150, "weight": "barbell", "notes": "" },
+        { "name": "Incline Dumbbell Press", "sets": 4, "reps": "10", "restSeconds": 120, "weight": "dumbbells", "notes": "" },
+        { "name": "Plank", "sets": 3, "reps": "60s", "restSeconds": 60, "weight": "bodyweight", "notes": "" }
+      ]
+    }
+  ]
+}

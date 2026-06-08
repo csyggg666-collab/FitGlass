@@ -1,0 +1,22 @@
+12-Week Hypertrophy Plan (Push / Pull / Legs)
+
+Save this file as PDF or Word (.docx) to test the Import flow.
+In the app: Import → choose the file → extract text → "Structure with Claude" → paste the JSON reply.
+
+PUSH DAY
+- Bench Press — 4 x 8-10, rest 120s
+- Seated Dumbbell Shoulder Press — 3 x 10-12, rest 90s
+- Cable Fly — 3 x 12-15, rest 60s
+- Triceps Pushdown — 3 x 12-15, rest 60s
+
+PULL DAY
+- Deadlift — 3 x 5, rest 180s
+- Lat Pulldown — 4 x 10-12, rest 90s
+- Seated Cable Row — 3 x 10-12, rest 90s
+- Barbell Curl — 3 x 12, rest 60s
+
+LEG DAY
+- Back Squat — 4 x 8, rest 150s
+- Romanian Deadlift — 3 x 10, rest 120s
+- Leg Press — 3 x 12, rest 90s
+- Standing Calf Raise — 4 x 15, rest 45s
