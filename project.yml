@@ -2,7 +2,7 @@ name: FitGlass
 options:
   bundleIdPrefix: com.example
   deploymentTarget:
-    iOS: "26.5"
+    iOS: "26.0"
   developmentLanguage: en
   createIntermediateGroups: true
   groupSortPosition: top
@@ -29,7 +29,7 @@ targets:
   FitGlass:
     type: application
     platform: iOS
-    deploymentTarget: "26.5"
+    deploymentTarget: "26.0"
     sources:
       - path: Sources/FitGlass
         excludes:
@@ -49,7 +49,7 @@ targets:
   FitGlassTests:
     type: bundle.unit-test
     platform: iOS
-    deploymentTarget: "26.5"
+    deploymentTarget: "26.0"
     sources:
       - Tests/FitGlassTests
     dependencies:

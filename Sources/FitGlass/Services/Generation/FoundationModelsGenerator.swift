@@ -25,7 +25,7 @@ struct FoundationModelsGenerator: WorkoutPlanGenerator {
     /// Whether on-device generation is usable on this device/build.
     static var isAvailable: Bool {
         #if canImport(FoundationModels)
-        if #available(iOS 26.5, *) {
+        if #available(iOS 26.0, *) {
             if case .available = SystemLanguageModel.default.availability { return true }
         }
         #endif
